@@ -1,0 +1,28 @@
+*  most os has kernel
+* kernel is a running software process , that governs access between all the programs running on the computer
+    and all the pyhiscal hardware as well
+*  ex: nodejs, directly doesnt communicate with the physical device 
+* instead nodejs, comminicates with the kernel, as in "it wants to write a file" 
+  and then the kernel comminicates with the cpu,memory and the hard disk.
+
+* namespacing: isolating resources per process ( or group of processes)
+    ex:processes,harddrice  ,network
+* control groups( cgroups) ,limit the amount of resources used per processes
+    ex: limit, the memory, cpu usage, network bandwidth
+
+
+* a coontainer is not a pyshical construct that exists inside the computer.
+* it is a group of processes, that has a group of resources, specifically assigned to it.
+
+* here after imagining the container, for a chrome seperately, then the next step is
+* kernel will look at the incoming call, and directs the process to the resources available only for this container
+*to ex: hard drive, RAM,network
+
+* now, we might have a question, that how is the image, a file contains the processes?
+* ans is, the image, will have a specific start up commands , 
+* first, the kernel is going to isolate  a little section of the hard drive and makes it 
+    available only to  just this container
+* now after this subset is created ,, the file snapshot , inside the image, is taken
+     and placed inside the subset.
+*  now, the startup command is then exectued, and the chrome is invoked, and we 
+  create a new instance of that process, the process is then isolated inside this container

@@ -1,0 +1,26 @@
+* docker run hello-world starts up the docker cli or docker client
+* it will process the commands, and then communicates the commands with the docker server
+
+* when we ran the command, that meant, we wanted to start a new container ,using the image, with  a name of "hello-world
+* the "hello-world" image, has a program in it,whose purpose is to print the message
+
+* when we ran the command, and the docker server starts communicating with the docker cli or docker client, a series of actions
+ occur in the background
+* the docker server saw that we want to start a new container , using an image called "hello-world"
+
+* the first thing that the docker server did is
+* it checks if it already had a local copy of the "hello-world" image or file
+* it checks if the image cache is empty
+* (as  we downloaded, it and we have not added anything in the image cache, thatsy , the image cache is empty)
+* so as the image cache is empty, it decieds to reach out a free service called "Docker hub"
+* Docker hub is a repository of free public images, which we can download and run.
+
+* so since the docker-hub has the hello-world image, so docker server, downloaded the hello-world file and stored it on your personal computer in image-cache
+* so that, we can ran it at some point of future, and it would happen very quickly
+
+*now  docker-server, creates a instance of a container, adn ran a single program
+
+* ( container , is the instance of the image, its sole purpose is to run that image) 
+
+
+* when we run the docker run command, it reaches out the docker hub , it grabs the image, and creates the container out of the image.
