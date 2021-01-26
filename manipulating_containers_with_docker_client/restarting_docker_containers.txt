@@ -1,0 +1,8 @@
+* when a container is stopped, we can start it again, it is not like it is dead, we can start it again
+
+* take its id, and execute >docker start 162ecee7b37f(some id)
+
+docker start -a 162ecee7b37f
+
+* we cannot replace the default command
+

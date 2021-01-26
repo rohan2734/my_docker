@@ -1,0 +1,2 @@
+>docker system prune
+* we have to redownload the docker images

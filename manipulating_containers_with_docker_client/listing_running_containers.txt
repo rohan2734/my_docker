@@ -1,0 +1,18 @@
+to list all containers
+>docker ps
+
+>docker run busybox echo hi there
+it exists ,immediately, to run  the container for a long time 
+
+>docker run busybox ping google.com
+it attempts to ping the google servers, and calculates the latency
+
+
+open the second window, and run >docker ps
+
+click on ctrl+c, on the first terminal to stop it
+
+to show all containers , that were created on the machine
+>docker ps --all
+
+docker ps , also gives the id of the containers

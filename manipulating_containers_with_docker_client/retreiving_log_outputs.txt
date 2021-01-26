@@ -1,0 +1,14 @@
+>docker start contianerid
+* to see the information, or output from the contianer, we added "-a"
+
+>docker logs contianerid
+
+>docker create busybox echo hi there
+contianerid
+>docker start contianerid ( it executes hi there inside of it and immediately exists)
+
+* now we want to go back to the stopeed contianer, and we want all logs from that contianer
+>docker logs contianerid (get logs from a contianer)
+(docker logs is not re running the contianer again, we are just getting the logs of the contianer )
+
+* it is a good way to inspect the contianer

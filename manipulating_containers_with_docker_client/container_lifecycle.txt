@@ -1,0 +1,18 @@
+docker run (creates containers from the image)
+
+alternatives
+>docker create + docker start
+
+>docker create
+it just setups the file system snapshot to be used to create the container
+
+>docker start
+it executes the startup comand,like echo hi there, it executes that command and prints hi there
+
+>docker create hello-world
+"c8804772715145a2c8c14b8a6540f61868a001e7b535d17f0eadf13073496e1c" (some id)
+
+>docer start -a "c8804772715145a2c8c14b8a6540f61868a001e7b535d17f0eadf13073496e1c" (someid)
+
+-a is, the command, that makes the docker watch the output from the container, and print on my terminal
+

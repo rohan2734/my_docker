@@ -1,0 +1,9 @@
+>docker run busybox echo hi there
+hi there
+
+>docker run busybox ls
+ls(prints files and files in the directory)
+
+ls and echo are the two commands in the busy box, they are executable
+where as in hell-world , these programs doesnt exist
+

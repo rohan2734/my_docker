@@ -1,0 +1,26 @@
+>docker create busybox ping google.com
+49fb421e5b05ccbee04d28739624dd64ed4f1c52434757ea263efee0da23d1a2
+
+>docker start 49fb421e5b05ccbee04d28739624dd64ed4f1c52434757ea263efee0da23d1a2
+49fb421e5b05ccbee04d28739624dd64ed4f1c52434757ea263efee0da23d1a2
+
+>docker logs 49fb421e5b05ccbee04d28739624dd64ed4f1c52434757ea263efee0da23d1a2
+
+* now to stop the running container ,
+>docker stop 49fb421e5b05ccbee04d28739624dd64ed4f1c52434757ea263efee0da23d1a2
+>docker kill 49fb421e5b05ccbee04d28739624dd64ed4f1c52434757ea263efee0da23d1a2
+
+* difference:
+>docker stop contianerid
+
+
+when we execute docker stop command, a hardware signal is sent to the primary process inside the contianerid
+
+we send a sigterm command, telling it to shut down a process, and stop the process inside of the container
+and do the cleanup
+
+>docker kill
+it issues a kill command, it tells that, u have to shut down right now, you  dont have to do any cleanup
+
+* if the docker doesnt stop , after the docker stop command, it would fall back to docker kill
+
