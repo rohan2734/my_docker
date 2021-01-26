@@ -1,0 +1,4 @@
+* click on the bottom left of the screen,
+* select new window using distro
+* select the distro
+* and open the my_docker folder
