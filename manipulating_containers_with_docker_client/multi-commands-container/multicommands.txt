@@ -1,0 +1,28 @@
+docker exec -it 0f9ac92ae9b9 redis-cli
+
+-it is important
+
+>docker exec 0f9ac92ae9b9 redis-cli
+we get kicked out of the terminal
+
+
+every process, in linux environment, has 3 processes, 
+these are the channels, used to communicate the information
+standard in : STDIN,
+it is used to communicate the information , into the process.
+standard out :  STDOUT,
+standard error : STDERR
+
+>docker exec -i -t 
+(they are two seperate flags)
+
+(shortform)
+>docker exec -it 
+when we add the -i flag,
+we are saiyng that, make sure that, any stuff that we type, gets into the standard in of the redis cli process 
+
+-t flag, is for , any stuff, when we output, we want in a nice form
+
+
+
+

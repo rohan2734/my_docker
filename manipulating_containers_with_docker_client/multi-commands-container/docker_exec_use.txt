@@ -1,0 +1,19 @@
+>docker exec
+
+we want to get the terminal access, without always running
+>docker exec again and again
+
+so , how to open a terminal,in the context of a running container
+
+>docker ps 
+to get the container id
+
+>docker exec -it 0f9ac92ae9b9 sh
+#
+
+>ctrl+D 
+to get out of a container
+
+>what is sh
+it is the name of a program , that is being executed in that container,
+
