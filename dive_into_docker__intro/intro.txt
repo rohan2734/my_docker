@@ -5,4 +5,4 @@
   it has its own little space of memory,netowrking technology, and hardware resources
 
 * DockerCLI (Dockerclinet) is a tool or portal to help us interact with other software called DockerServer(Docker Daemon)
-* Docker Server is sresponsible for creating containers, images, maintaining containers and uploading images.
+* Docker Server is responsible for creating containers, images, maintaining containers and uploading images.

@@ -1,0 +1,36 @@
+docker build .
+
+it takes docker file and creats an image 
+
+it is a new command tied to the CLI
+
+when we run docker file, we give it to docker client ,turns 
+and gives file to
+docker server, and builds usable image 
+
+. is specifying build context ->set of files and folders that 
+we want to wrap in this container 
+
+FROM alpine -> it looked at local cache ,and checked to see ,
+ if it has ever downloaded an image called alpine before 
+
+* we just download an initial image 
+
+* step 2 -> RUN apk add --update redis
+
+we created a temporary container from alpine image , 
+we executed this command inside the contianer, and we took the container File System
+and saved it as a temporary image , we have temporary file system snapshot 
+that has redis included 
+
+with CMD -->["redis-server"]
+
+it will check the previous step , we create a new temporary container out of it 
+and we make the image file system snapshot and stuff into the other container 
+
+CMD setting primary command of the primary process of the container, 
+container doesnt execute the redis server , it just tells the container
+if you were to run real, you should be running with redis-server as primary command
+
+and shuts out the other command, takes the snapshot of File system and primary command  
+end result is successfully built id 

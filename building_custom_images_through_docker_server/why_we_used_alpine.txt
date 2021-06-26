@@ -1,0 +1,3 @@
+* we used alpine since it is  a package manager becuase, and we can use it to automatically download redis
+* since alpine has that package manager  , and it is convenient to download redis, 
+  we have used alpine

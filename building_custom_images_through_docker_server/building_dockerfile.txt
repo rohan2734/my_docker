@@ -1,0 +1,19 @@
+* mkdir redis-image 
+* create a file simply called Dockerfile 
+* and enter the 
+commands like 
+
+FROM alpine 
+
+RUN apk add --update redis 
+
+CMD ["redis-server"]
+
+*then run docker build .
+
+* you will see , successfully built some_id
+
+*or writing image some_id 
+
+then run `docker run some_id`
+

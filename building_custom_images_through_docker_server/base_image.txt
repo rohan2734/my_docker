@@ -1,0 +1,42 @@
+creating a docker file is like 
+
+installing chrome on a computer with no Operating System
+
+How do you install chrome on computer with no Operating System ?
+
+install an Operating System   -
+start up your default browser - sepcify a base image 
+
+navigate to chrome.google.com -
+download installer -
+open file/-
+execute chrome_installer.exe -run commands to install additional programs 
+
+execute chrome.exe -command to run on startup 
+
+
+when we created an image, it is empty, there is nothign to install
+ any dependency
+the purpose to sepcify  a base image is to give a starting point
+five initial set of codes, that we can use to further customise our image 
+
+
+From(Instruciton telling docker server what to do) -Alpine(argument to instructino) 
+Run- apk add --update redis
+CMD - ["redis-server"]
+
+why did we use Alpine as base image?
+ why do you use Windows or macos ?
+ we use so that it has built in terminals that is nice for us 
+ or it has set of pre installed programs that are useful for us to accomplish 
+
+what is it?
+
+APK - (nothing to do with docker) it is a program called  apache package,... 
+it is a package manager ,that comes pre installed on the alpine image 
+
+we can use that package manager that is built into alpine to automatically download redis for us
+we used alpine because it has package manager program which has already built for us
+ 
+
+
