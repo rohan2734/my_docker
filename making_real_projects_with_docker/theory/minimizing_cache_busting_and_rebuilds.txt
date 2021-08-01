@@ -1,0 +1,32 @@
+we need to take current build process , 
+inside the docker file and split the copy operation into 
+2 different steps 
+
+only thing npm install requires is package.json , it doesnt require about 
+index.js 
+
+so we will 
+COPY ./package.json for npm install
+
+look in the directory specified for docker build and find the 
+package.json file and copy that into the current working directory  of the 
+container 
+
+then we will run npm install and we will copy everything else 
+
+and run 
+docker build -t rohandevaki/simpleweb .
+
+so if we do this one more time 
+it will run very quickly
+because we are able to use the cache version 
+
+now change the index.js file ,from bye there to how are you 
+and run docker build -t rohandevaki/simpleweb . 
+for 3 rd time
+
+we saw that it is execued very quickly
+
+so the order of instructions will make difference 
+wherever possible segment out the copy instructions 
+

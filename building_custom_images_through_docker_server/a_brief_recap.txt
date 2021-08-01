@@ -1,0 +1,37 @@
+everything started from alpine instruction
+FROM apline image 
+it told the docker server to download alpine image
+
+we used alpine image as a base (since it comes with handy programs that 
+are useful for us to create images  )
+
+RUN apk add --update redis 
+instruction was exectued by docker server 
+
+get image from previous step 
+it was used to create a temporary container 
+
+command specified was executed in the temporary container, it downloaded
+and installed redis in that and modified the FS 
+
+it took a snapshot of container FS , and result was FS snapshot 
+
+and we got image ready for the next instruciton, that image is the FS snapshot 
+
+shut down the temporary container 
+
+we are passing alpine image with redis added on top to the next instruction
+
+cmd ["redis server "]
+then we again create  image from the previous step 
+create a temporary container out of it 
+
+rahter than  executing the run command, we run the CMD command 
+to specify what the image should do , when it is started as a container 
+
+it will execute the command ["redis-server" ]whenver it starts on future 
+
+and result was container , that has modified primary command 
+
+we shut down the temporary container and get image ready for the next instruction 
+

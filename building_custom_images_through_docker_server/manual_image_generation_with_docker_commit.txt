@@ -1,0 +1,30 @@
+with the flow of actions that occured while we are building a image 
+
+we spoke on how 
+
+we can create contianer from image, and we can take a container 
+and generate image out of it also 
+
+we can manually do this that docker file does 
+
+so run these:
+
+docker run -it alpine sh
+
+apk add --update redis
+
+docker ps ->to get the id of the running contianer
+
+4753a07a6b5e
+
+docker commit -c 
+
+(-c allows us to specify the default command )
+
+docker commit -c "CMD 'redis-server'" 4753a07a6b5e
+
+output is the new id of the image : sha256:003478a41a933f2b5e529e34cbb5968298e98ddcf27940825d674ac339af8469
+
+you can copy the segment of the id 
+
+docker run 003478a41a9

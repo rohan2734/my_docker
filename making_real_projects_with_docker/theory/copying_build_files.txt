@@ -1,0 +1,30 @@
+how to make sure that package.json is available inside the container
+ before npm install is executed, 
+
+ so we need to add a instruction that is 
+
+it is copy instruction 
+it is used to move files and folders from local file system on machine 
+to file system inside the temporary container that is
+ created during the build process 
+
+syntax is 
+
+COPY ./ ./
+
+path to tolder to copy from on *your machine*
+ relative to build context (./ 
+is current working directory)
+
+place to copy stuff to insdie *the container*
+
+now it is not good to work with image id 
+so we need to work with the tag names of that image 
+
+docker build -t username/projectname .
+docker build -t rohandevaki/simpleweb .
+
+now try to startup the image and get the node server running 
+
+docker run image_name 
+docker run rohandevaki/simpleweb

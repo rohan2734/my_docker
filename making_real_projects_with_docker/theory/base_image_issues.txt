@@ -1,0 +1,29 @@
+alpine doesnt have npm
+there is no copy of npm available 
+we have base image ,alpine 
+we need to select base image, based on dependencies we want to use 
+it is just a  5MB file 
+
+1.we can find a base image that has node and npm pre installed in it 
+
+2.alternatively we can install nodejs and npm install in alpine 
+
+we are choosing step1
+
+go to dockerhub, 
+hub.docker.com
+
+node : this repository has node pre installed in it 
+so we can build our image based on node 
+
+we can specift the node version 
+FROM node:6.14
+
+we want to see tag called alpine
+if we see a tag called alpine
+we can do 
+FROM node:alpine 
+
+here the tags are the repositories 
+not FROM alpine
+

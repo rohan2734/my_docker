@@ -1,0 +1,13 @@
+* goal of this project, is to create  a nodejs web application 
+wrap it under the docker contianer, and be able to access the web application 
+from a browser running on your local machine 
+
+steps: 
+create NodeJS web app 
+create a dockerfile 
+build image from dockerfile 
+run image as container
+connect  to web app from  a browser 
+
+
+

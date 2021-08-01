@@ -1,0 +1,41 @@
+* npm is included in our container, so it is 
+attempting to install the dependencices 
+
+* but it is saying that there is no package.json file  together 
+* that is a file inside our project , its purpose ist to list all 
+the dependencices that are required to successfully run the project 
+
+so when we run npm install , npm finds this file, and finds all 
+the dependencices and tries to install each of those 
+
+but npm is not able to get the file 
+
+reasons:
+
+let us understand the execution 
+insdie the image building process 
+
+we specify  1.FROM node:alpine 
+it downloads the node image 
+next step 2.RUN npm install , goes back to the previous step  and get the image 
+from there and create temporary container out of it 
+
+we take the FS snapshot and put in temporary container 
+and then we execute npm install 
+
+here we dont see any package.json file available in container 
+only files available is whatever came out of the FS snapshot from node image 
+
+we are only working with segment of harddrive, there is other rest of hard drive
+which is not conected to container and inside the rest of harddrive 
+is where our package.json is 
+so it is not able to communicate into the container 
+
+so if we do run successfully run npm install, but there is no package.json file 
+available
+
+so takeaway is:
+none of the files inside your project directory are available inside
+the container by default
+
+

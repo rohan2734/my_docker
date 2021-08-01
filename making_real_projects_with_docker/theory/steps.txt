@@ -1,0 +1,20 @@
+1. make package.json 
+2. make index.js 
+3.write a small code 
+4. make sure that npm is installed 
+5. run npm install 
+
+Template :
+1.specify a  base image 
+2. run some commands to install additional programs 
+3.specify a command to run on contianer setup
+
+redis:
+FROM alpine
+RUN apk add --update redis
+CMD ["redis-server"]
+
+Node 
+FROM alpine
+RUN npm install 
+CMD ["npm","start"]

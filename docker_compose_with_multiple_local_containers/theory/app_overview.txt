@@ -1,0 +1,38 @@
+docker container contains web application 
+that is number of times someone vistied the server 
+
+we need 2 seperate components to build this 
+
+we need web server to respond to http requests, 
+and to render the xml 
+
+we also need database to store the number of times it is visited 
+we use redis it is in memory database 
+
+the number of times the page has been visited 
+
+
+we are going to make a single container, we can run both 
+node and redis 
+
+however we get a lot of traffic ,
+ we need to introduce more web application
+servers to respond to incoming http requests 
+
+so inorder to make additional servers, we need to create additional 
+instances of docker container that contains both node application and 
+instance of redis 
+
+the issue is 
+everyone of these redis servers will be disconnected 
+so one redis instance might think that the page might be visited 99 times 
+
+and other instance can think that it might be vistied only 3 times 
+
+so we cannot create multiple redis instances for a single app 
+instead we want one signle instance
+
+so we will have seperate docker containers which has node app 
+will conenct to one single docker container with redis 
+
+in first iteration we will not be considering about scaling 

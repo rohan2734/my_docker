@@ -1,0 +1,32 @@
+start up the container 
+with docker run -p 8080:8080 rohandevaki/simpleweb
+
+now we are trying to make changes to index.js file
+
+so we change hi there to by there 
+we saved it , but when we see in the loclahost:8080 , we arenot able to 
+see the changes
+
+anytime we build an image, we are taking snapshot of file system 
+we are taking a snapshot of index.js , after it got copied over 
+
+and we are running our application based on old version of index.js 
+
+we modified index.js file inside our current working directory here 
+that change is not going to be automatically updated on container 
+
+if we want that update the file inside the container, we need 
+to do additional file configuration
+
+well to get the container the latest update , we need to build again 
+it would do all the npm install , npm start etc
+
+so we will stop the running server 
+we will do docker build -t rohandevaki/simpleweb .
+
+here when we run COPY ./ ./
+we are copying every single file 
+even though we only made changes to index.js
+
+so that is not ideal, if we ddint make any dependency change 
+we should not run a npm install command 

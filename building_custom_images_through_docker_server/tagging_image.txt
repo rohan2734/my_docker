@@ -1,0 +1,31 @@
+docker build .
+builds the image , and returns the id : sha256:ae73da6b2cfd85cbde708d3dea5ca3339e0
+
+we can build a container from it
+docker run sha256:ae73da6b2cfd85cbde708d3dea5ca3339e0
+
+an instance of our image will get a new container, and inside that 
+we are going to have the insance of redis server 
+
+docker run id is a pain 
+we had done docker run redis ,remembering the name 
+
+so we are going to reun docker build and we are adding a little argument 
+that is going to  tag the image that is created, and make it lot easier 
+to refer to it by a name that we can customise  
+
+convention is 
+your docker id / name of the project : version 
+
+-t  stephengrider/redis:latest
+
+-t rohandevaki/redis-server:latest .
+. -> specifies the directory of files/folders to use for the build 
+
+so now you can  enter the command 
+
+docker run rohandevaki/redis
+
+you dont need to specify latest 
+
+latest version will be used by the docker 

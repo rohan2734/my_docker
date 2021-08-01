@@ -1,0 +1,42 @@
+from alpone we get alpine imag 
+from run instruction we get temp image 
+fromcmd instruciton we get temp image 
+
+for every instruciton we have a FS snapshot and a startup command 
+
+go back to docker file  and on the RUN instruciton , we need to add new line
+and it is installing a random gcc dependency
+
+after that we enter docker build .
+
+we see that it doesnt install redis 
+it uses cache , instead we see a single message that says cache 
+
+it means that docker has realised from the  previous step to step 2 , 
+nothing has changed, it knows that it is going to get the same image, since
+it was same instruction 
+
+so it knows that it already exected ,
+and that image is cached and stored on local machine 
+
+rather than going through the process of creating another container 
+out of the alpine image and running apk add --update redis 
+it says, it has already done that , it uses the image that it generated in previous step
+
+then it sees that there is a new command  apk add --update gcc 
+then it doesnt use cache and from there it uses process of generating container 
+and running command inside the container  and taking that snapshot and going through all of that stuff before 
+
+so it has now executed 
+RUN apk add --update gcc 
+and it has generated imgae out of that instruction , 
+so if we now run docker build . 3rd time, without any chagnes 
+so it sees that there is no change, and it uses the cache version of the image
+
+if series of steps is changed 
+docker it will use the cache version of alpine but not cache version of gcc 
+since last time it added gcc only after adding redis
+since order of operation is different , so the cache cannot be used 
+
+the order of changing the instrucitons can make the docker server to create the image slowly 
+

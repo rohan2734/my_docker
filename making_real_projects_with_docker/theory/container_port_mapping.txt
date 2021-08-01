@@ -1,0 +1,64 @@
+fixing the site cant be reached message even after running the image
+
+our browser is making request to localhost:8080 
+it is reference to current machine on port 8080
+
+by default no traffic is coming to your localhost is routed to container 
+it has its own isolated ports 
+
+so in order to make sure that request to your computer or 
+some outside computer will be redirected to conatainer
+we need to setup explict port mapping 
+
+port mapping :
+anytime someone makes request to given port on local network 
+take that  request and automatically forward it to some  port inside the 
+container 
+
+if anyone makes the request to localhost:8080 , take that request 
+and automatically forward it to port inside the container on port 8080
+where the node application can receive it and process the request
+
+this is only talking about incoming request 
+docker can also make a request 
+
+when you run npm install ,it reaches to the internet 
+so there is no limitaion on contianers avility to reach out 
+it is limitaion on the incoming request on your computer to get in the container 
+
+
+so inorder to forward the traffic 
+we need to change the process of running the docker 
+
+port setup is run time 
+it is not any changes in dockerfile 
+
+we need to run 
+                      |- this port inside the contianer 
+docker run -p 8080 : 8080 <image id>
+                |
+                -  route incoming requests to this port on local host to 
+
+so first quit from the running container by ctrlC 
+
+and then start the container back up and setup the port mapping
+
+port from the source machine to the port we are mapping to container 
+neet not be identical 
+
+so we can say anytime request comes on 5000 redirect to  8080 on container 
+
+and if you are trying to change the port on container , you also need to change 
+on app.js 
+
+to exit the running container , enter exit 
+
+we need to rebuild the conatiner and then we will relaunch it
+
+if u want to run the contianer with id 
+
+docker ps 
+docker exec -it <imageID> sh 
+
+and program we want to run 
+
