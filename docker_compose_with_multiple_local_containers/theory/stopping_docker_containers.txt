@@ -1,0 +1,46 @@
+two different commands to how to run them 
+with docker compose 
+
+1. in past we executed by 
+`docker run -d redis`
+
+this started a new container, but it executed in 
+the background 
+
+2. print all the running containers 
+`docker ps`
+
+3.stop  that container 
+- copy the id 
+- `docker stop id`
+
+4. launch in background 
+- `docker-compose up -d` 
+
+5. stop containers 
+- `docker-compose down`
+
+---
+
+since we made changes on one of our images 
+we need to add build that again 
+so we use 
+
+docker-compose up --build 
+
+after running it , we are going  to rebuild the container 
+
+and then everyhthing starts up and redis server would be running 
+and node also  
+
+now if we open up the web browser , 
+we see an error message, and if we see the terminal ,it says 
+we exited with code 0 
+
+open the second terminal , and run `docker ps`
+
+and we see that only redis server is running, and node server is no longer 
+running
+
+and we want  to automatically restart it , at some point of time 
+

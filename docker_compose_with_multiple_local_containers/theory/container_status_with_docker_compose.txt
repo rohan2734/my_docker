@@ -1,0 +1,15 @@
+docker-compose ps 
+
+it will print the status of the two containers inside the docker compose file 
+
+we need to run the docker-compose as the same directory of 
+docker-compose.yml file 
+
+when you run docker-compose ps 
+it will look for docker-compose file inside of your current directory
+
+if it finds one,it will read that file, and try to find all the running 
+containers on local machine that belong to the docker compose file 
+
+if you run from any other directory, it will not be able to find the containers 
+

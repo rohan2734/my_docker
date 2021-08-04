@@ -1,0 +1,53 @@
+* we are going to figure our , how docker compose can restart the crash
+ or stopped container 
+
+* index.js file, we added process.exit(0) 
+this 0 refers to exit status code 
+
+status codes 
+0 - we exited and everything is OK 
+1,2,3 etc - we exited because something went wrong 
+
+--
+
+we are going to setup a restart policy
+inside our docker compose file 
+
+"no" - by default we have no restart policy assigned to all 
+of the containers
+meaning- do not attempt to restart this  container, if it stops or crashes 
+"always" - this container stops "for any reason" , always attempt
+to restart it 
+"on-failure" - only restart if container stops with an 
+error code 
+"unless-stopped" - always restart unless we (the developers) forcibly
+stop it 
+---
+
+add 
+    node-app:
+        restart: always
+
+change to 
+    restart: on-failure
+
+hit ctrl+C to stop the running process  and 
+run `docker-compose up`
+
+here when we check the localhost:4001  , we exited 
+with code 0
+we have not got any error 
+
+here the contianer will never restart 
+
+if we want to use `no`
+
+we need to use as ` "no" ` or ` 'no' `
+and not just `no` 
+since yml file `no` is interpreted as `false`
+
+example of always
+is to run a public web application 
+
+worker proces
+processing a file, then let it close out ,and not get restarted

@@ -1,0 +1,7 @@
+it is possible to run the server and it
+ might experience a hang or crash 
+
+and we are going to see how we will be handling it 
+
+how to restart a container, when a software has some error 
+

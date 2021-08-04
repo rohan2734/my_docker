@@ -1,0 +1,20 @@
+FROM node:alpine 
+
+WORKDIR '/app'
+
+COPY ./package.json ./ 
+RUN npm install 
+
+COPY ./ ./
+
+CMD ["npm","start"]
+---
+copy this
+build image out of this file by
+`docker build .`
+
+we see the id which we created 
+
+now we need to work with the tag 
+
+docker build -t rohandevaki/visits:latest .

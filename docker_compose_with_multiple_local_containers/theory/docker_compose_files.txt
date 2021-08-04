@@ -1,0 +1,44 @@
+* here are the containers i wanted to be created
+
+1.redis server - make it using redis image 
+2. node-app - make it using dockerfile in current directory 
+            - map port 8081 to 8081
+
+
+in the same directory , create a new file 
+
+docker-compose.yml 
+and we are going to write all that configuration
+here 
+
+----
+version: '3' //that specifies the version of docker compose which we are trying 
+            //to use this formatted file 
+
+//telling docker what we wanted it to do 
+//anytime you see services is container 
+//it is not exactly a container, but we can say that it is a type of container
+//in the above example, we are defining 2 services
+//both these services take the form of docker container 
+services: 
+//first service 
+    redis-server:
+        //specify the image to create the container 
+        image: 'redis'
+    node-app:
+        //here we are going to mention the dockerfile , instead of image 
+        //so we are going to mention build : .
+        //look in the current directory for a dockerfile 
+        //and use that to build the image 
+        build: . 
+        //specify the ports
+        ports:
+        // - in yml is an array, we can specify an array of ports 
+        //we only want to map one set of ports 
+        //syntax -> "port on local machine : port inside the container "
+            - "4001:8081"
+
+next section, is how we bring up this yml file to bring the containers 
+together
+
+

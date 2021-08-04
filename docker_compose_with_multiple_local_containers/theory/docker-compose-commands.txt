@@ -1,0 +1,59 @@
+docker run myimage -> docker-compose up 
+
+docker build .
+docker run myimage -> docker-compose up --build 
+
+if we ever want to rebuild the images, that are listed in the docker compose 
+we write docker-compose up --build 
+
+--build tells the docker compose to start the containers again  
+but make sure you rebuild them ahead of time , so that we get  
+all the latest changes 
+
+now cd into visits 
+run   `docker-compose up` 
+
+[ the very first line is 
+creating network "visits-default" 
+
+when you just create a new services with docker compose 
+it is going to automatically make a network for you, that is going 
+to join the different contienrs together  ]
+
+[ `building node-app` is creating an image for our node application 
+  we see a huge output ,  most important one are 
+  `creating visits_node-app_1 ... done ` //single instance of node app service 
+  `creating visits_redis-server_1 ... done` // single instance of redis service 
+ ]
+
+[ After that we see the output from  every service, 
+`redis-server-_1 | 1:C.. //is output from new redis server 
+if we scroll down more , we see that we get output from node-app_1 also 
+
+redis is ready to accept connections 
+and node-app_1 is also started 
+
+both of the containers setup are created successfully ]
+
+now lets open up the browser and see if the app is working 
+
+we changed the port on last min, but the port is hardcoded there 
+ 
+ so visit localhost:4001
+
+ and evertime we refresh we see the number goes up
+
+ ---
+
+ so thats the basic usage of docker compose 
+ we created two seperate services, and docker compose automatically 
+ created a network 
+
+ important thing is 
+ that we created host name, and that host name is specified  in docker 
+ compose file 
+
+so anytime we specify the url of the databse, we can instead provide 
+the name of the container 
+
+and the host name will be automatically resolved by the docker 

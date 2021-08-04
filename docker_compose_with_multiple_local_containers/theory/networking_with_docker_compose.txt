@@ -1,0 +1,32 @@
+we havent established any network between the two 
+containers 
+
+by just defining these services, docker compose will automatically
+create the services on same network 
+
+and we are going to have free access to communicate with each other 
+in any way we want 
+
+but how to connect nodejs to redis ?
+start working in index.js 
+
+---
+
+const app=express();
+// () here we are going to add the location of the redis server 
+// we are running, to specify, 
+// we specify { host : 'connection-url' }
+// since we are using docker compose here, we can conenct to the 
+// other contianer  , running the redis server  ,simply by 
+// redis-server
+// but expressjs doesnt have any idea of redis-server 
+// redis server is not going to assume that we sent some url with https 
+// when the connection request goes out , from this node application 
+//docker is going to see it 
+//and it sees the container with the name redis server 
+//so it is going to get automatically redirected 
+
+const client = redis.createClient({
+    host : 'redis-server',
+    port : 6379 //by default redis uses this port 
+});

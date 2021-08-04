@@ -1,0 +1,90 @@
+run
+docker run rohandevaki/visits:latest
+
+we get a error (reddis connection to 127.0.0.1:6379 failed) 
+
+we  should concentrate on getting a seperate a container running a redis 
+server 
+
+we are going to run the same command 
+
+`docker run redis`
+
+so it will pull the redis instance from the docker hub,and copy the 
+instance in local machine 
+
+now we have redis server running, we will open a second terminal 
+and we will run the custom image 
+
+docker run rohandevaki/visits
+
+and we get an error , we have the same error
+
+---
+
+your computer 
+
+docker container                        docker container 
+node app                ---->                  redis
+
+
+these two containers need to communicate with each other, but dont 
+have any connection 
+so inorder to establish  a connection , such that node app has ability to 
+reach out the redis server 
+
+and store the information
+
+we need to built a network 
+
+options of connecting these containers 
+
+Use docker clis network features
+
+use docker compose
+
+built in docker cli allows us to connect the two containers 
+
+however there is a issue 
+it is a real pain 
+it is a handful of commands which we will have to rerun every single time 
+
+
+we are going to make a custom CLI tool 
+
+called docker compose 
+docker compose is a seperate tool that gets installed on the docker
+
+now , docker-compose 
+
+it will list out a series of commands 
+
+docker compose 
+-is a seperate CLI  
+- it is installed on a machine 
+- when you start introducing dockercompose, it will be very confusing 
+on what docker cli does and what docker compose does 
+
+- what is the relation? docker compose exits to  avoid writing repititive commands 
+
+- it makes  easy to start multiple docker containers at same time 
+- and automatically connect them 
+- automates some of the long winded arguments  we were passing to
+docker run 
+
+take  same commands 
+docker build -t rohandevaki/visits:latest 
+docker run -p 8080:8080 stephengrider/visits 
+
+and to be clear, we are not going to copy paste  these in our file 
+
+we are going to write a special syntax
+
+and encode in very special file called docker-compose.yml 
+
+once we create that file, we then feed it into docker compse cli 
+
+it will parse that file, and create all the different containers 
+
+with correct configuration that we specified 
+
