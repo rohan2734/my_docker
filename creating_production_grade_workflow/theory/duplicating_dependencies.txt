@@ -22,5 +22,8 @@ using `docker build -f Dockerfile.dev .`
 
 we will notice that it was much faster 
 
-when we were putting the node server with docker 
+when we were putting the node server with docker
+
+
+
 

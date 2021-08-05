@@ -1,0 +1,34 @@
+* after running 
+    `docker build Dockerfile.dev .`
+
+    we need to run copy the id and run it by 
+    `docker run sha256:a20c974906beb84be1c2dfdbed8673`
+
+* when we run it , we see our development server startup    
+ and we can access the development server , by  http://localhost:3000
+
+* we see that the site is not reached 
+
+* anytime we want to expose our port to docker 
+we need to add `-p` to map out the port 
+
+* docker run -p 3000:3000 a20c974906beb84be1c2dfdbed8673
+
+* we are going to see the development server ,
+and we see the page 
+
+* now we are going to make changes 
+
+* change the "edit src/app.js" to "hi there"
+* save that , and refresh the page, we dont see the changes 
+
+* when we start our image, we are taking a snapshot of all
+of the source code inside of our project directory
+and we are builing the snapshot with that  image 
+
+* if we want the changes to be shown, we need to rebuild the image 
+or figure our some clever solution 
+
+* ofcourse we dont want to rebuild the image, 
+* next seciton we are going to see the changes automatically getting 
+mapped to the image 

@@ -1,0 +1,4 @@
+* we are going to see the changes automatically getting 
+mapped to the image 
+* without us stopping the image ,rebuild and restart 
+the container 
