@@ -1,0 +1,35 @@
+* in the last section, we discussed the development of a development 
+workflow that is going to  allow us to develop a application,
+ test and deploy it and repeat that process 
+
+* creating a github Repo , it is a centerpoint of coordination for 
+all the code which we are going to write, and deploy to outside hosting 
+service
+
+* it is going to have two different branches
+ - feature branch : (development branch) add code, make changes, and update the applicaiton 
+ - master branch : represent clean working copy of code bits 
+ - any changes which we are going to make on master branch,
+  will automatically get deployed on  the hosting provider 
+
+* pull all the latest code from the feature branch 
+* make some amount of changes in the application, push those changes 
+  and again to the feature branch 
+* once you push the changes to feature branch, you will create a pull 
+  request , and merge them over to the master branch 
+
+* this pull request to add code from feature to master, is going to set off 
+   a series of actions that governs how we manage your code bits 
+
+* once the pull request is created and merge it, 2 important things occur 
+  we are going to setup a workflow , that is going to automatically 
+  take our applicaiton and push to a applicaiton called Travis CI 
+
+* travis CI pulls down the code, and runs the set of tests, taht you write on 
+  your code base
+
+* for our applicaiton , we will make some pregenerated tests 
+
+* Travis CI , automatically take our entire project and push to amazon 
+  webserver hosting 
+

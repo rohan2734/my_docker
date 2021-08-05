@@ -1,0 +1,15 @@
+* last flow didnt mention about docker 
+* docker is a tool in a normal development flow 
+* docker makes some of these tasks a lot easier 
+
+* we might see that the focus is not on docker, 
+  and more on AWS,github etc , that is fine 
+* we are going  to see how docker can be 
+  implemented 
+
+* Application we are going to make ,is going to have 
+  no custom code, we are going to generate a project ,
+  (using little project generator),we are going to wrap that up 
+  with inside of a docker container 
+
+

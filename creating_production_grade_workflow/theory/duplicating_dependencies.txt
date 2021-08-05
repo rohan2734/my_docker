@@ -1,0 +1,26 @@
+`sending built context do docker daemon 155 MB`
+
+why are wee seeing it now, when we havent seen it before?
+
+issue is :
+we have just installed `create-react-app tool` and 
+used it to create the project, that tool automatically installed 
+all of our dependencies in our project 
+
+it has 155 mb of dependencies
+
+in the past, we didnt install any of the dependencies, instead 
+we were dependent on docker to install the dependencies 
+
+so at present , we have 2 copies of dependencies and we dont need 2
+
+we will delete the node modules folder in working directory
+
+and now if we try to build the image a second time 
+
+using `docker build -f Dockerfile.dev .`
+
+we will notice that it was much faster 
+
+when we were putting the node server with docker 
+

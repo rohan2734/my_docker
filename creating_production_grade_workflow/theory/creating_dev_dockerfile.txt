@@ -1,0 +1,72 @@
+Development
+
+Docker container 
+npm run start 
+-----
+in production 
+
+docker container 
+npm run build 
+-----
+
+we are going to create 
+`Dockerfile.dev`
+
+and purpose of dockerfile.dev is to make sure that 
+it is really clear that this dockerfile is only used to run our 
+applicatoin in Development environment 
+
+and in production ,
+it will only have the name of `Dockerfile`
+
+otherwise during the production it would build the image of 
+`Dockerfile.dev` (instead) in frontend folder , otherwise it cant find package.json 
+
+---
+
+( write a different configuration to create image similar 
+start with base image )
+FROM node:alpine 
+
+( mentioning the current working directory )
+WORKDIR '/app'
+
+( copying the package.json to current working dirctory of app )
+COPY package.json ./ or COPY package.json .
+
+( install the dependencies )
+RUN npm install 
+
+( copy everything  from the project )
+COPY ./ ./ or COPY . .
+
+CMD ["npm","run","start"]
+
+---
+`cd fronted`
+
+now we will figure out to run a dockerfile with 
+custom filename 
+
+run `ls` , we see the dockerfile
+
+and run `docker build .`
+but we get an error message saying that dockerfile is not found 
+
+so inorder to make sure we build the project with `Dockerfile.dev`
+
+we are going to make little change with `docker build .` command as 
+`docker build -f Dockerfile.dev .`
+
+`f` is for mentioning the file 
+
+--
+now it is going to load up the dockerfile,
+and create image  
+
+we might see a couple of warnings here 
+
+that is fine, 
+
+---
+

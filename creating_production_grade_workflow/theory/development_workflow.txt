@@ -1,0 +1,8 @@
+* when we say flow : 
+- process of developing, testing and deploying the
+application 
+
+- and at some point of time ,doing the additional
+development, additional testing and deployment 
+
+- 

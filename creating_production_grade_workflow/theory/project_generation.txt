@@ -1,0 +1,30 @@
+
+* ensure nodejs installed locally by `node -v` 
+  if we see a version  ,then we have nodejs installed 
+
+* now run `npx create-react-app frontend`
+
+* it is going to create a new react project 
+
+* npm run start- starts up a development server, for development
+ use only 
+
+* npm run test -runs tests associated with prokect 
+* npm run build - builds a production version of the Application
+
+---
+run `npm run test` , and ctrl C 
+run `npm run build`, and takes all different files and compact in one single file 
+
+run `ls`
+now we have build directory 
+
+run `ls build`
+run `ls build/static`
+
+there are some javascript files, and we have our application there 
+
+and we will serve this javascript file from this AWS instance or service
+
+and run `npm start` , we see the default application see running 
+---
